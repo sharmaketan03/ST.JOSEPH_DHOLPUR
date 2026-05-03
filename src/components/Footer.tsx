@@ -3,9 +3,8 @@ import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Youtube } from "luci
 import logo from "@/assets/logo.png";
 const socials = [
   { icon: Facebook, link: "https://www.facebook.com/share/1bTmUwL1Lx/" },
-  { icon: Twitter, link: "https://twitter.com" },
   { icon: Instagram, link: "https://www.instagram.com/st.joseph.international_school?igsh=MXE5ajRkdWJsaWtlbQ==" },
-  { icon: Youtube, link: "https://youtube.com" },
+  { icon: Youtube, link: "https://www.youtube.com/@st.josephsinternational_school" },
 ];
 const Footer = () => {
   return (
@@ -80,13 +79,13 @@ const Footer = () => {
                 Ashiyana Colony, Jail Road, Near Railway Station, Dholpur, Rajasthan - 328001, India
               </p>
               <p className="flex items-center gap-2 text-primary-foreground/70">
-                <Phone className="w-4 h-4 shrink-0 text-secondary" /> +91‑80581-00465
+                <Phone className="w-4 h-4 shrink-0 text-secondary" /> +91‑99286-23387
               </p>
               <p className="flex items-center gap-2 text-primary-foreground/70">
-                <Phone className="w-4 h-4 shrink‑0 text-secondary" /> +91‑94140‑28066
+                <Phone className="w-4 h-4 shrink‑0 text-secondary" /> +91‑88245-51683
               </p>
               <p className="flex items-center gap-2 text-primary-foreground/70">
-                <Mail className="w-4 h-4 shrink-0 text-secondary" /> info@stjosephdholpur.com
+                <Mail className="w-4 h-4 shrink-0 text-secondary" /> st.josephDholpur.com
               </p>
             </div>
 

@@ -50,7 +50,7 @@ const heroSlides = [
 const marqueeItems = [
   "🏆 100% Board Exam Pass Rate 2025",
   "📚 Admissions Open for 2026-27",
-  // "⚽ State Level Cricket Champions",
+
   "🎨 National Art Competition Winners",
   // "🔬 Science Olympiad Gold Medalists",
   "📅 Annual Day Celebrations - April 2026",
@@ -109,10 +109,10 @@ const Marquee = () => (
   </div>
 );
 const stats = [
-  { icon: Users, value: "2000+", label: "Students" },
-  { icon: GraduationCap, value: "100+", label: "Faculty" },
-  { icon: Trophy, value: "50+", label: "Awards" },
-  { icon: BookOpen, value: "25+", label: "Years" },
+  { icon: Users, value: "500+", label: "Students" },
+  { icon: GraduationCap, value: "30+", label: "Faculty" },
+  { icon: Trophy, value: "10+", label: "Awards" },
+  { icon: BookOpen, value: "7+", label: "Years" },
 ];
 
 const features = [
@@ -131,9 +131,9 @@ const news = [
 ];
 
 const testimonials = [
-  { name: "Mrs. Priya Sharma", role: "Parent of Class VIII Student", text: "St. Joseph's has been a wonderful journey for my child. The teachers are caring and the environment is perfect for holistic growth.", rating: 5 },
-  { name: "Mr. Rajesh Kumar", role: "Parent of Class X Student", text: "The academic results and values imparted here are exceptional. My son has grown tremendously in confidence and knowledge.", rating: 5 },
-  { name: "Mrs. Sunita Verma", role: "Parent of Class V Student", text: "We are delighted with the all-round development our daughter has achieved. The co-curricular activities are outstanding.", rating: 5 },
+  { name: "Dr.Manoj Tyagi", role: "Parent of Class X and  VIII Student", text: "St. Joseph's has been a wonderful journey for my child. The teachers are caring and the environment is perfect for holistic growth.", rating: 5 },
+  { name: "Mr. Reena Agarwal", role: "Parent of Class X Student", text: "The academic results and values imparted here are exceptional. My son has grown tremendously in confidence and knowledge.", rating: 5 },
+  { name: "Mr. Brijnandan Dubey", role: "Parent of Class X Student", text: "We are delighted with the all-round development our daughter has achieved. The co-curricular activities are outstanding.", rating: 5 },
 ];
 // ─── HERO ────────────────────────────────────────────────────────
 const HeroSection = () => {
@@ -446,7 +446,7 @@ const Index = () => {
               <span className="text-secondary font-semibold text-sm tracking-wider uppercase flex items-center gap-2 justify-center">
                 <Quote className="w-4 h-4" /> What Parents Say
               </span>
-              <h2 className="section-title mt-2">Trusted by 2000+ Families</h2>
+              <h2 className="section-title mt-2">Trusted by 800+ Families</h2>
               <div className="gold-underline" />
             </div>
           </AnimatedSection>
