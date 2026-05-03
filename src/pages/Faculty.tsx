@@ -23,10 +23,10 @@ const facultyData = [
  ]
 
 const Faculty = () => {
-  const [filter, setFilter] = React.useState();
+  const [filter, setFilter] = React.useState("PRT");
 
-  function handelfunc(e){
-       setFilter(e.target.innerText)
+  function handelfunc(value){
+        setFilter((prev) => (prev === value ? "" : value));
   }
 
 
@@ -69,7 +69,7 @@ console.log("filter",filter)
         </div> */}
           <div className="flex items-center justify-center gap-4 mb-5">
               <button
-          onClick={(e) => handelfunc(e)}
+          onClick={(e) => handelfunc("PRT")}
           className={`px-6 py-2 rounded-full border transition-all duration-300 
           ${
             filter === "PRT"
@@ -81,7 +81,7 @@ console.log("filter",filter)
         </button>
 
         <button
-          onClick={(e) => handelfunc(e)}
+          onClick={(e) => handelfunc("TGT")}
           className={`px-6 py-2 rounded-full border transition-all duration-300 
           ${
             filter === "TGT"
