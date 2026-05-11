@@ -41,6 +41,7 @@ const navItems = [
       { label: "News", path: "/news" },
       { label: "Calendar", path: "/calendar" },
       { label: "Transportation", path: "/transportation" },
+      {label:"Certifications" , path:"/public/PDFs/Document 39.pdf",external: true,},
       { label: "Fee Structure", path: "/fee-structure" },
     ],
   },
@@ -98,7 +99,7 @@ const Header = () => {
       : "opacity-0 invisible -translate-y-2"
   }`}
 >
-  {item.children.map((child) => (
+  {/* {item.children.map((child) => (
     <Link
       key={child.path}
       to={child.path}
@@ -110,7 +111,29 @@ const Header = () => {
     >
       {child.label}
     </Link>
-  ))}
+  ))} */}
+  {item.children.map((child) =>
+  child.external ? (
+    <a
+      key={child.path}
+      href={child.path}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block py-1.5 px-3 text-sm text-foreground hover:text-primary hover:bg-primary/10 rounded"
+    >
+      {child.label}
+    </a>
+  ) : (
+    <Link
+      key={child.path}
+      to={child.path}
+      onClick={() => setMobileOpen(false)}
+      className="block py-1.5 px-3 text-sm text-foreground hover:text-primary hover:bg-primary/10 rounded"
+    >
+      {child.label}
+    </Link>
+  )
+)}
 </div>
                 </div>
               ) : (
@@ -147,11 +170,34 @@ const Header = () => {
                     </button>
                     {openDropdown === item.label && (
                       <div className="pl-4 space-y-1 bg-white rounded-md">
-                        {item.children.map((child) => (
+                        {/* {item.children.map((child) => (
                           <Link key={child.path} to={child.path} onClick={() => setMobileOpen(false)}  className="block py-1.5 px-3 text-sm text-foreground hover:text-primary hover:bg-primary/10 rounded">
                             {child.label}
                           </Link>
-                        ))}
+                        ))} */}
+                        {item.children.map((child) =>
+  child.external ? (
+    <a
+      key={child.path}
+      href={child.path}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={() => setMobileOpen(false)}
+      className="block py-1.5 px-3 text-sm text-foreground hover:text-primary hover:bg-primary/10 rounded"
+    >
+      {child.label}
+    </a>
+  ) : (
+    <Link
+      key={child.path}
+      to={child.path}
+      onClick={() => setMobileOpen(false)}
+      className="block py-1.5 px-3 text-sm text-foreground hover:text-primary hover:bg-primary/10 rounded"
+    >
+      {child.label}
+    </Link>
+  )
+)}
                       </div>
                     )}
                   </div>
