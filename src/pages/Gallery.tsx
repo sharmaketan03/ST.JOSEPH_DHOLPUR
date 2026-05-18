@@ -2,10 +2,10 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import AnimatedSection from "@/components/AnimatedSection";
 import { useState, useEffect, useCallback } from "react";
-import image1 from "../../src/assets/image1.jpeg";
-import image2 from "../../src/assets/image2.jpeg"
-import image3 from "../../src/assets/image3.png"
-import campus2 from "../../src/assets/campus2.jpg"
+import image1 from "@/assets/image1.jpeg";
+import image2 from "@/assets/image2.jpeg"
+import image3 from "@/assets/image3.png"
+import campus2 from "@/assets/campus2.jpg"
 import campus3 from "@/assets/campus3.png"
 import Event from "@/assets/celebrations.png"
 import Event1 from "@/assets/Event1.jpg"
