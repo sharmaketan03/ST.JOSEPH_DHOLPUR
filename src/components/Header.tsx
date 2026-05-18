@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X, Phone, Mail, MapPin, ChevronDown } from "lucide-react";
 import logo from "@/assets/logo.png";
+import cert from "@/assets/PDFs/Document_39.pdf"
 
 const navItems = [
   { label: "Home", path: "/" },
@@ -41,7 +42,7 @@ const navItems = [
       { label: "News", path: "/news" },
       { label: "Calendar", path: "/calendar" },
       { label: "Transportation", path: "/transportation" },
-      {label:"Certifications" , path:"/public/PDFs/Document 39.pdf",external: true,},
+      {label:"Certifications" , path:cert,external: true,},
       { label: "Fee Structure", path: "/fee-structure" },
     ],
   },

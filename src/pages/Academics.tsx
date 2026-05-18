@@ -26,7 +26,7 @@ const Academics = () => (
         </AnimatedSection>
 
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {["Pre-Primary (Nursery–KG)", "Primary (Classes I–V)", "Secondary (Classes VI–X)"].map((level, i) => (
+          {[ "Primary (Classes I–V)", "Secondary (Classes VI–X)"].map((level, i) => (
             <AnimatedSection key={level} delay={i * 0.1}>
               <div className="bg-card rounded-xl border border-border p-6 card-hover">
                 <div className="w-10 h-10 bg-secondary/20 rounded-lg flex items-center justify-center mb-3">

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import { useRef } from "react";
 import { GraduationCap, Users, Trophy, BookOpen, Star, ArrowRight, Calendar,  Sparkles, Play, Phone, CheckCircle,  Quote } from "lucide-react";
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -10,6 +11,8 @@ import sports from "../assets/Sports.jpg"
 import SectionHeading from "@/components/SectionHeading";
 import library from "../assets/school-building.png"
 import { useEffect, useState } from "react";
+import AdmissionPopup from  "../pages/Admissionpop"
+import video from "../assets/video.mp4"
 import {
   
  MapPin, Clock,
@@ -17,7 +20,12 @@ import {
 } from "lucide-react";
 
 
-
+// const heroVideos = [
+//   "https://videos.pexels.com/video-files/8617752/8617752-uhd_2560_1440_25fps.mp4",
+//   "https://videos.pexels.com/video-files/8466014/8466014-uhd_2560_1440_25fps.mp4",
+//   "https://videos.pexels.com/video-files/5198159/5198159-uhd_2560_1440_25fps.mp4",
+//   "https://videos.pexels.com/video-files/4144923/4144923-uhd_2560_1440_24fps.mp4",
+// ];
 
 
 // // ─── DATA ────────────────────────────────────────────────────────
@@ -58,38 +66,38 @@ const marqueeItems = [
 
 // ─── HELPER COMPONENTS ──────────────────────────────────────────
 
-// function ClipboardIcon(props: any) { return <BookOpen {...props} />; }
-// function CreditCardIcon(props: any) { return <Zap {...props} />; }
+function ClipboardIcon(props: any) { return <BookOpen {...props} />; }
+function CreditCardIcon(props: any) { return <Zap {...props} />; }
 
-// const CountUpNumber = ({ target, suffix = "" }: { target: number; suffix?: string }) => {
-//   const [count, setCount] = useState(0);
-//   const ref = useRef<HTMLDivElement>(null);
-//   const [started, setStarted] = useState(false);
+const CountUpNumber = ({ target, suffix = "" }: { target: number; suffix?: string }) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+  const [started, setStarted] = useState(false);
 
-//   useEffect(() => {
-//     const observer = new IntersectionObserver(
-//       ([entry]) => { if (entry.isIntersecting && !started) setStarted(true); },
-//       { threshold: 0.5 }
-//     );
-//     if (ref.current) observer.observe(ref.current);
-//     return () => observer.disconnect();
-//   }, [started]);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting && !started) setStarted(true); },
+      { threshold: 0.5 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [started]);
 
-//   useEffect(() => {
-//     if (!started) return;
-//     const duration = 2000;
-//     const step = target / (duration / 16);
-//     let current = 0;
-//     const timer = setInterval(() => {
-//       current += step;
-//       if (current >= target) { setCount(target); clearInterval(timer); }
-//       else setCount(Math.floor(current));
-//     }, 16);
-//     return () => clearInterval(timer);
-//   }, [started, target]);
+  useEffect(() => {
+    if (!started) return;
+    const duration = 2000;
+    const step = target / (duration / 16);
+    let current = 0;
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) { setCount(target); clearInterval(timer); }
+      else setCount(Math.floor(current));
+    }, 16);
+    return () => clearInterval(timer);
+  }, [started, target]);
 
-//   return <div ref={ref}>{count}{suffix}</div>;
-// };
+  return <div ref={ref}>{count}{suffix}</div>;
+};
 
 // ─── MARQUEE ─────────────────────────────────────────────────────
 const Marquee = () => (
@@ -108,80 +116,62 @@ const Marquee = () => (
     </motion.div>
   </div>
 );
-const stats = [
-  { icon: Users, value: "500+", label: "Students" },
-  { icon: GraduationCap, value: "30+", label: "Faculty" },
-  { icon: Trophy, value: "10+", label: "Awards" },
-  { icon: BookOpen, value: "7+", label: "Years" },
-];
 
-const features = [
-  { title: "CBSE Curriculum", desc: "Affiliated to CBSE, New Delhi ensuring national standard education.", icon: BookOpen, color: "bg-blue-500/10 text-blue-600" },
-  { title: "Holistic Development", desc: "Focus on academics, sports, arts, and character building.", icon: Star, color: "bg-amber-500/10 text-amber-600" },
-  { title: "Expert Faculty", desc: "Experienced and dedicated teachers committed to excellence.", icon: Users, color: "bg-emerald-500/10 text-emerald-600" },
-  { title: "Modern Infrastructure", desc: "State-of-the-art classrooms, labs, and sports facilities.", icon: Trophy, color: "bg-purple-500/10 text-purple-600" },
-  { title: "Safe Environment", desc: "CCTV monitored campus with trained security personnel.", icon: Shield, color: "bg-red-500/10 text-red-600" },
-  { title: "Global Exposure", desc: "International collaborations and exchange programs.", icon: Globe, color: "bg-cyan-500/10 text-cyan-600" },
-];
-
-const news = [
-  { title: "Annual Sports Day 2026", date: "March 15, 2026", desc: "Join us for an exciting day of athletic competition and school spirit." },
-  { title: "Science Exhibition", date: "April 5, 2026", desc: "Students showcase creative science projects and practical experiments." },
-  { title: "Parent-Teacher Meeting", date: "March 22, 2026", desc: "Discuss your child's progress with our dedicated faculty members." },
-];
-
-const testimonials = [
-  { name: "Dr.Manoj Tyagi", role: "Parent of Class X and  VIII Student", text: "St. Joseph's has been a wonderful journey for my child. The teachers are caring and the environment is perfect for holistic growth.", rating: 5 },
-  { name: "Mr. Reena Agarwal", role: "Parent of Class X Student", text: "The academic results and values imparted here are exceptional. My son has grown tremendously in confidence and knowledge.", rating: 5 },
-  { name: "Mr. Brijnandan Dubey", role: "Parent of Class X Student", text: "We are delighted with the all-round development our daughter has achieved. The co-curricular activities are outstanding.", rating: 5 },
-];
 // ─── HERO ────────────────────────────────────────────────────────
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
+  const [currentVideo, setCurrentVideo] = useState(0);
+ const slide = heroSlides[currentSlide]; 
   useEffect(() => {
     const timer = setInterval(() => setCurrentSlide((p) => (p + 1) % heroSlides.length), 5000);
     return () => clearInterval(timer);
   }, []);
 
-  const slide = heroSlides[currentSlide];
+  
+
+
+
+const [showPopup, setShowPopup] = useState(false);
+
+const handleHeroHover = () => {
+  const alreadyShown = sessionStorage.getItem("admissionPopup");
+
+  if (!alreadyShown) {
+    setShowPopup(true);
+    sessionStorage.setItem("admissionPopup", "shown");
+  }
+};
 
   return (
-    <section className="relative min-h-[92vh] flex items-center overflow-hidden">
+    <section className="relative min-h-[92vh] flex items-center overflow-hidden" onMouseEnter={handleHeroHover}>
       {/* Multi-layer animated BG */}
+
+
       <div className="absolute inset-0">
-        <motion.div key={currentSlide} initial={{ scale: 1.15 }} animate={{ scale: 1 }} transition={{ duration: 8, ease: "easeOut" }} className="absolute inset-0">
-          <img src={schoolBuilding} alt="Campus" className="w-full h-full object-cover" />
-        </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
-        {/* Animated grid overlay */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 50px, hsl(var(--primary-foreground)) 50px, hsl(var(--primary-foreground)) 51px), repeating-linear-gradient(90deg, transparent, transparent 50px, hsl(var(--primary-foreground)) 50px, hsl(var(--primary-foreground)) 51px)"
-        }} />
+        <AnimatePresence mode="sync">
+          <motion.video
+            key={currentVideo}
+            initial={{ opacity: 0, scale: 1.15 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ opacity: { duration: 1.2 }, scale: { duration: 9, ease: "easeOut" } }}
+            src={video}
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster={schoolBuilding}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </AnimatePresence>
+        <img src={schoolBuilding} alt="Campus" className="absolute inset-0 w-full h-full object-cover -z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/55 to-primary/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
       </div>
-
-      {/* Floating orbs */}
-      {[
-        "top-16 right-16 w-40 h-40 bg-secondary/15 blur-3xl",
-        "bottom-24 right-32 w-56 h-56 bg-secondary/8 blur-[80px]",
-        "top-1/3 right-1/4 w-24 h-24 bg-primary-foreground/5 blur-2xl",
-        "bottom-16 left-1/4 w-32 h-32 bg-secondary/10 blur-3xl",
-        "top-24 left-[15%] w-20 h-20 bg-primary-foreground/3 blur-xl",
-      ].map((cls, i) => (
-        <motion.div
-          key={i}
-          animate={{
-            y: [i % 2 === 0 ? -25 : 25, i % 2 === 0 ? 25 : -25, i % 2 === 0 ? -25 : 25],
-            x: [i % 3 === 0 ? -10 : 10, i % 3 === 0 ? 10 : -10, i % 3 === 0 ? -10 : 10],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{ repeat: Infinity, duration: 6 + i * 2, ease: "easeInOut" }}
-          className={`absolute rounded-full hidden lg:block ${cls}`}
-        />
-      ))}
-
-
+ <AdmissionPopup
+        open={showPopup}
+        onClose={() => setShowPopup(false)}
+      />
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-5 gap-10 items-center">
@@ -249,70 +239,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right cards – 2 cols */}
-          <motion.div
-            initial={{ opacity: 0, x: 80 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4, duration: 0.9 }}
-            className="hidden lg:flex lg:col-span-2 flex-col gap-4"
-          >
-            {/* Admission card */}
-            <motion.div animate={{ y: [-6, 6, -6] }} transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-              className="bg-primary-foreground/10 backdrop-blur-xl rounded-2xl border border-primary-foreground/15 p-6 shadow-2xl"
-            >
-              <div className="flex items-center gap-3 mb-5">
-                <img src={logo} alt="Logo" className="w-14 h-14 object-contain" />
-                <div>
-                  <h3 className="font-heading font-bold text-primary-foreground">Admissions Open</h3>
-                  <p className="text-secondary text-xs font-semibold">Session 2026-27</p>
-                </div>
-              </div>
-              <div className="space-y-2.5">
-                {["Pre-Nursery to Class X", "CBSE Curriculum", "Smart Classrooms", "Sports Academy"].map((item, i) => (
-                  <motion.div key={item} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.7 + i * 0.1 }}
-                    className="flex items-center gap-2.5 text-primary-foreground/80 text-sm"
-                  >
-                    <CheckCircle className="w-4 h-4 text-secondary shrink-0" /> {item}
-                  </motion.div>
-                ))}
-              </div>
-              <a href="https://wa.me/8058100465?text=Hello%20I%20want%20to%20enquire%20about%20admission"
-              target="blank"
-              className="mt-5 w-full btn-secondary inline-flex items-center justify-center gap-2 text-sm">
-                Enquire Now <ArrowRight className="w-4 h-4" />
-              </a>
-            </motion.div>
-
-            {/* Mini achievement card */}
-            <motion.div animate={{ y: [6, -6, 6] }} transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-              className="bg-secondary/15 backdrop-blur-xl rounded-xl border border-secondary/20 p-4 flex items-center gap-4"
-            >
-              <div className="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center shrink-0">
-                <Trophy className="w-6 h-6 text-secondary" />
-              </div>
-              <div>
-                <p className="text-primary-foreground font-heading font-bold text-sm">100% Board Results</p>
-                <p className="text-primary-foreground/60 text-xs">All students passed CBSE 2025</p>
-              </div>
-              <motion.div animate={{ scale: [1, 1.2, 1] }} transition={{ repeat: Infinity, duration: 2 }}>
-                <Star className="w-5 h-5 text-secondary ml-auto" />
-              </motion.div>
-            </motion.div>
-
-            {/* Live notification */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.2 }}
-              className="bg-primary-foreground/8 backdrop-blur-lg rounded-xl border border-primary-foreground/10 p-3 flex items-center gap-3"
-            >
-              <motion.div animate={{ scale: [1, 1.3, 1] }} transition={{ repeat: Infinity, duration: 1.5 }}
-                className="w-3 h-3 bg-green-500 rounded-full shrink-0"
-              />
-              <p className="text-primary-foreground/70 text-xs">
-                <span className="text-primary-foreground font-semibold">12 parents</span> enquired today
-              </p>
-            </motion.div>
-          </motion.div>
+          
         </div>
       </div>
 
@@ -338,6 +265,35 @@ const HeroSection = () => {
     </section>
   );
 };
+
+const stats = [
+  { icon: Users, value: "500+", label: "Students" },
+  { icon: GraduationCap, value: "30+", label: "Faculty" },
+  { icon: Trophy, value: "10+", label: "Awards" },
+  { icon: BookOpen, value: "7+", label: "Years" },
+];
+
+const features = [
+  { title: "CBSE Curriculum", desc: "Affiliated to CBSE, New Delhi ensuring national standard education.", icon: BookOpen, color: "bg-blue-500/10 text-blue-600" },
+  { title: "Holistic Development", desc: "Focus on academics, sports, arts, and character building.", icon: Star, color: "bg-amber-500/10 text-amber-600" },
+  { title: "Expert Faculty", desc: "Experienced and dedicated teachers committed to excellence.", icon: Users, color: "bg-emerald-500/10 text-emerald-600" },
+  { title: "Modern Infrastructure", desc: "State-of-the-art classrooms, labs, and sports facilities.", icon: Trophy, color: "bg-purple-500/10 text-purple-600" },
+  { title: "Safe Environment", desc: "CCTV monitored campus with trained security personnel.", icon: Shield, color: "bg-red-500/10 text-red-600" },
+  { title: "Global Exposure", desc: "International collaborations and exchange programs.", icon: Globe, color: "bg-cyan-500/10 text-cyan-600" },
+];
+
+const news = [
+  { title: "Annual Sports Day 2026", date: "March 15, 2026", desc: "Join us for an exciting day of athletic competition and school spirit." },
+  { title: "Science Exhibition", date: "April 5, 2026", desc: "Students showcase creative science projects and practical experiments." },
+  { title: "Parent-Teacher Meeting", date: "March 22, 2026", desc: "Discuss your child's progress with our dedicated faculty members." },
+];
+
+const testimonials = [
+  { name: "Dr.Manoj Tyagi", role: "Parent of Class X and  VIII Student", text: "St. Joseph's has been a wonderful journey for my child. The teachers are caring and the environment is perfect for holistic growth.", rating: 5 },
+  { name: "Mr. Reena Agarwal", role: "Parent of Class X Student", text: "The academic results and values imparted here are exceptional. My son has grown tremendously in confidence and knowledge.", rating: 5 },
+  { name: "Mr. Brijnandan Dubey", role: "Parent of Class X Student", text: "We are delighted with the all-round development our daughter has achieved. The co-curricular activities are outstanding.", rating: 5 },
+];
+// ─── HERO ────────────────────────────────────────────────────────
 
 const Index = () => {
   return (
@@ -611,7 +567,5 @@ const Index = () => {
 };
 
 export default Index;
-
-
 
 

@@ -7,7 +7,7 @@ const achievements = [
   { icon: Trophy, title: "District Science Olympiad Winners", year: "2025", desc: "First place in the district-level Science Olympiad for three consecutive years." },
   
   { icon: Star, title: "100% Board Exam Pass Rate", year: "2024-25", desc: "All students of Class X  passed the CBSE Board Examinations." },
-  { icon: Award, title: "Best School Award", year: "2024", desc: "Recognized as the Best School in Dholpur district for overall excellence." },
+  
   { icon: Trophy, title: "National Debate Competition", year: "2024", desc: "Students represented at the national level debate competition and secured top positions." },
   { icon: Medal, title: "Inter-School Art Competition", year: "2025", desc: "Multiple awards in the regional inter-school art and painting competition." },
 ];
