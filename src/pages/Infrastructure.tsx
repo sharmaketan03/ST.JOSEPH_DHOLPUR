@@ -3,14 +3,33 @@ import PageHero from "@/components/PageHero";
 import AnimatedSection from "@/components/AnimatedSection";
 import schoolBuilding from "@/assets/school-building.png";
 import { Building2, FlaskConical, BookOpen, Monitor, Dumbbell, Music } from "lucide-react";
+import Lab from "@/assets/lab.png";
 
 const facilities = [
-  { icon: Building2, title: "Smart Classrooms", desc: "Air-conditioned classrooms equipped with interactive smart boards and multimedia projectors for engaging learning experiences." },
-  { icon: FlaskConical, title: "Science Laboratories", desc: "Well-equipped Physics, Chemistry, and Biology labs for hands-on experimentation and practical learning." },
-  { icon: Monitor, title: "Computer Lab", desc: "Modern computer lab with high-speed internet and latest hardware for digital literacy education." },
-  { icon: BookOpen, title: "Library", desc: "Extensive library with thousands of books, journals, and digital resources for research and reading." },
-  { icon: Dumbbell, title: "Sports Complex", desc: "Multi-sport complex with cricket ground, basketball court, football field, and indoor games facility." },
-  { icon: Music, title: "Auditorium", desc: "State-of-the-art auditorium for cultural events, seminars, and large-scale school functions." },
+  {
+    title: "Smart Classrooms",
+    image:
+      "https://images.unsplash.com/photo-1509062522246-3755977927d7",
+    desc: "Our smart classrooms are equipped with interactive digital boards, projectors, and modern teaching tools to make learning engaging and effective for every student.",
+  },
+  {
+    title: "Science Laboratory",
+    image:
+      Lab,
+    desc: "Well-equipped physics, chemistry, and biology labs provide hands-on practical experience and encourage scientific thinking among students.",
+  },
+  {
+    title: "Computer Lab",
+    image:
+      "https://images.unsplash.com/photo-1515879218367-8466d910aaa4",
+    desc: "Our advanced computer lab offers high-speed internet and the latest systems to help students build strong digital and technical skills.",
+  },
+  {
+    title: "Library",
+    image:
+      "https://images.unsplash.com/photo-1521587760476-6c12a4b040da",
+    desc: "The school library provides a peaceful learning environment with a wide collection of books, journals, and digital resources for students.",
+  },
 ];
 
 const Infrastructure = () => (
@@ -23,19 +42,38 @@ const Infrastructure = () => (
             <img src={schoolBuilding} alt="School Building" className="w-full h-64 md:h-96 object-cover" />
           </div>
         </AnimatedSection>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {facilities.map((f, i) => (
-            <AnimatedSection key={f.title} delay={i * 0.08}>
-              <div className="bg-card rounded-xl border border-border p-6 card-hover h-full">
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                  <f.icon className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="font-heading font-semibold text-lg mb-2">{f.title}</h3>
-                <p className="text-sm text-muted-foreground">{f.desc}</p>
-              </div>
-            </AnimatedSection>
-          ))}
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+  {facilities.map((f, i) => (
+    <div
+      key={i}
+      className="card bg-base-100 shadow-xl hover:-translate-y-2 transition-all duration-300"
+    >
+      <figure className="h-56 overflow-hidden">
+        <img
+          src={f.image}
+          alt={f.title}
+          className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+        />
+      </figure>
+
+      <div className="card-body p-2">
+        <h2 className="card-title text-primary">
+          {f.title}
+        </h2>
+
+        <p className="text-sm text-gray-600 leading-relaxed">
+          {f.desc}
+        </p>
+
+        <div className="card-actions justify-end mt-4">
+          {/* <button className="btn btn-primary btn-sm rounded-full">
+            Explore
+          </button> */}
         </div>
+      </div>
+    </div>
+  ))}
+</div>
       </div>
     </section>
   </Layout>

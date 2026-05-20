@@ -5,21 +5,23 @@ import AnimatedSection from "@/components/AnimatedSection";
 import { GraduationCap } from "lucide-react";
 
 const facultyData = [
-  { name: "Dr. Rajesh Kumar", subject: "Mathematics", exp: "20+ years" },
+  { name: "Mrs.Yashmeen", },
   {
-    name: "Mrs. Sunita Sharma",
-    subject: "English Literature",
-    exp: "15+ years",
+    name: "Mrs. Brajbala Mishra",
+   
   },
-  { name: "Mr. Anil Verma", subject: "Physics", exp: "18+ years" },
-  { name: "Mrs. Priya Singh", subject: "Chemistry", exp: "12+ years" },
+  { name: "Mrs.Pooja Sharma",  },
+ 
  ];
 
  const data=[
-   { name: "Mr. Deepak Gupta", subject: "Computer Science", exp: "10+ years" },
-  { name: "Mrs. Kavita Jain", subject: "Biology", exp: "14+ years" },
-  { name: "Mr. Ramesh Yadav", subject: "Hindi", exp: "16+ years" },
-  { name: "Mrs. Anjali Tiwari", subject: "Social Studies", exp: "11+ years" },
+   { name: "Mrs.Tanu Brijesh Sharma",  },
+  { name: "Mr. Vishnu Bansal",  },
+  { name: "Mrs. Aarti Sanjay Parmar", },
+  { name: "Mrs.Shivani Gupta", },
+  { name: "Mr.Harendra Singh", },
+  { name: "Mr.Ajeej Khan",  },
+ 
  ]
 
 const Faculty = () => {
@@ -109,7 +111,7 @@ console.log("filter",filter)
                     {f.subject}
                   </p>
                   <p className="text-xs text-muted-foreground mt-1">
-                    {f.exp} experience
+                    {/* {f.exp} experience */}
                   </p>
                 </div>
               </AnimatedSection>
@@ -132,7 +134,7 @@ console.log("filter",filter)
                     {f.subject}
                   </p>
                   <p className="text-xs text-muted-foreground mt-1">
-                    {f.exp} experience
+                    {/* {f.exp} experience */}
                   </p>
                 </div>
               </AnimatedSection>
