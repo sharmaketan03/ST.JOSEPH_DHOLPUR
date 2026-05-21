@@ -6,7 +6,7 @@ import image1 from "@/assets/image1.jpeg";
 import image2 from "@/assets/image2.jpeg"
 import image3 from "@/assets/image3.png"
 import campus2 from "@/assets/campus2.jpg"
-import campus3 from "@/assets/campus3.png"
+import campus3 from "@/assets/Campus3.png"
 import Event from "@/assets/celebrations.png"
 import Event1 from "@/assets/Event1.jpg"
 import Event2 from "@/assets/Events2.jpg"
