@@ -3,7 +3,11 @@ import { useState } from "react";
 import { Menu, X, Phone, Mail, MapPin, ChevronDown } from "lucide-react";
 import logo from "@/assets/logo.png";
 import cert from "/public/PDFs/Document.pdf";
-
+import specil_edu from "/public/PDFs/Special-Educator-AGREEMENT-LETTER.pdf";
+import Affiliation from "/public/PDFs/Affiliation.pdf";
+import Buliding_Safety from "@/assets/Building_Safety.png";
+import society from "@/assets/Society.png"
+import noc from "/public/PDFs/Noc .pdf"
 const navItems = [
   { label: "Home", path: "/" },
   {
@@ -42,12 +46,49 @@ const navItems = [
       { label: "News", path: "/news" },
       { label: "Calendar", path: "/calendar" },
       { label: "Transportation", path: "/transportation" },
-      {label:"Certifications" , path:cert,external: true,},
+    
       { label: "Fee Structure", path: "/fee-structure" },
+    ],
+  },
+  {
+    label: "Certifications",
+    children: [
+      
+     {
+  label: "CBSE Affiliation",
+  path: Affiliation,
+  external: true,
+},
+{
+  label: "NOC",
+  path: noc,
+  external: true,
+},
+{
+  label: "Building Safety",
+  path: Buliding_Safety,
+  external: true,
+},
+{
+  label: "Society Registration",
+  path: society,
+  external: true,
+},
+{
+  label: "SPECIAL EDUCATOR",
+  path: specil_edu,
+  external: true,
+},
+{
+  label: "TC",
+  path: cert,
+  external: true,
+},
     ],
   },
   { label: "Contact", path: "/contact" },
 ];
+
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
