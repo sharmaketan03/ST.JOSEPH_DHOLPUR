@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 import AnimatedSection from "@/components/AnimatedSection";
 import schoolBuilding from "@/assets/school-building.png";
 import { Building2, FlaskConical, BookOpen, Monitor, Dumbbell, Music } from "lucide-react";
-import Lab from "@/assets/lab.png";
+import Lab from "@/assets/Lab.png";
 
 const facilities = [
   {
