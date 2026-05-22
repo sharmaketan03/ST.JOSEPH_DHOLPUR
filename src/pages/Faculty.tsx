@@ -16,9 +16,9 @@ const facultyData = {
     { name: "Mrs. Aarti Sanjay Parmar", id: "3240734", reg: "126003240734" },
     { name: "Mrs. Shivani Gupta", id: "3199664", reg: "T25003199664" },
     { name: "Mr. Harendra Singh", id: "3199628", reg: "T25003199628" },
-    { name: "Mrs. KAVITA SINGH", id: "2035653", reg: "T22002035653" },
-    { name: "Mrs. SARIKA SHRIVASTAVA", id: "2035604", reg: "122002035604" },
-    { name: "Mr. AJEEJ KHAN", id: "2041513", reg: "T22002041513" },
+    { name: "Mrs. Kavita Singh", id: "2035653", reg: "T22002035653" },
+    { name: "Mrs. Sarika Shrivastav", id: "2035604", reg: "122002035604" },
+    { name: "Mr. Ajeej Khan", id: "2041513", reg: "T22002041513" },
   ],
   PGT: [
   
@@ -82,8 +82,8 @@ const Faculty = () => {
                   <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <GraduationCap className="w-10 h-10 text-primary" />
                   </div>
-                  <h3 className="font-heading font-semibold text-foreground mb-3">
-                    {f.name}
+                  <h3 className="font-heading font-semibold text-foreground mb-3 capitalize">
+                    {f.name.toUpperCase()}
                   </h3>
                   {/* Teacher ID */}
                   <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground bg-muted rounded-lg px-3 py-1.5 mb-2">

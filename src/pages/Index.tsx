@@ -130,20 +130,21 @@ const HeroSection = () => {
   
 
 
-
 const [showPopup, setShowPopup] = useState(false);
 
-const handleHeroHover = () => {
+useEffect(() => {
   const alreadyShown = sessionStorage.getItem("admissionPopup");
-
   if (!alreadyShown) {
-    setShowPopup(true);
-    sessionStorage.setItem("admissionPopup", "shown");
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+      sessionStorage.setItem("admissionPopup", "shown");
+    }, 1500); // 1.5 second delay after page load
+    return () => clearTimeout(timer);
   }
-};
+}, []);
 
   return (
-    <section className="relative min-h-[92vh] flex items-center overflow-hidden" onMouseEnter={handleHeroHover}>
+    <section className="relative min-h-[92vh] flex items-center overflow-hidden">
       {/* Multi-layer animated BG */}
 
 

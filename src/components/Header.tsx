@@ -8,6 +8,7 @@ import Affiliation from "/public/PDFs/Affiliation.pdf";
 import Buliding_Safety from "@/assets/Building_Safety.png";
 import society from "@/assets/Society.png"
 import noc from "/public/PDFs/Noc .pdf"
+
 const navItems = [
   { label: "Home", path: "/" },
   {
@@ -40,13 +41,13 @@ const navItems = [
   { label: "Admissions", path: "/admissions" },
   { label: "Gallery", path: "/gallery" },
   {
-    label: "More",
+    label: "Resources",
     children: [
       { label: "Events", path: "/events" },
       { label: "News", path: "/news" },
       { label: "Calendar", path: "/calendar" },
       { label: "Transportation", path: "/transportation" },
-    
+      { label: "Mandatory Public Disclosure", path: "/mandatory-public-disclosure" },
       { label: "Fee Structure", path: "/fee-structure" },
     ],
   },
@@ -60,7 +61,7 @@ const navItems = [
   external: true,
 },
 {
-  label: "NOC",
+  label: "Noc",
   path: noc,
   external: true,
 },
@@ -75,12 +76,12 @@ const navItems = [
   external: true,
 },
 {
-  label: "SPECIAL EDUCATOR",
+  label: "Special Educator",
   path: specil_edu,
   external: true,
 },
 {
-  label: "TC",
+  label: "Tc",
   path: cert,
   external: true,
 },

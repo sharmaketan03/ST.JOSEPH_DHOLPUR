@@ -4,12 +4,12 @@ import AnimatedSection from "@/components/AnimatedSection";
 import schoolBuilding from "@/assets/school-building.png";
 import { Building2, FlaskConical, BookOpen, Monitor, Dumbbell, Music } from "lucide-react";
 import Lab from "@/assets/Lab.png";
-
+import smartclassroom from "@/assets/SmartClassroom.jpg";
 const facilities = [
   {
     title: "Smart Classrooms",
     image:
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7",
+      smartclassroom,
     desc: "Our smart classrooms are equipped with interactive digital boards, projectors, and modern teaching tools to make learning engaging and effective for every student.",
   },
   {

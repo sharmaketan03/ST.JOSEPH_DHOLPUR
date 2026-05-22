@@ -26,6 +26,7 @@ import SchoolCalendar from "./pages/SchoolCalendar";
 import StudentLife from "./pages/StudentLife";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
+import MandatoryPublicDisclosure from "./pages/MandatoryPublicDisclosure";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -48,6 +49,7 @@ const App = () => (
           <Route path="/news" element={<News />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/infrastructure" element={<Infrastructure />} />
+          <Route path="/mandatory-public-disclosure"  element={<MandatoryPublicDisclosure />} />
           <Route path="/curriculum" element={<Curriculum />} />
           <Route path="/achievements" element={<Achievements />} />
           <Route path="/sports" element={<Sports />} />

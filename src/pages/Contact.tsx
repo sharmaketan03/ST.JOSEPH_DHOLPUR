@@ -37,8 +37,8 @@ Message: ${formData.message}
             <div className="space-y-6">
               {[
                 { icon: MapPin, title: "Address", info: "St. Joseph's International School, Dholpur, Rajasthan, India" },
-                { icon: Phone, title: "Phone", info: "+91-XXXXXXXXXX" },
-                { icon: Mail, title: "Email", info: "info@stjosephdholpur.edu.in" },
+                { icon: Phone, title: "Phone", info: "+91‑88245-51683" },
+                { icon: Mail, title: "Email", info: "st.josephDholpur.com" },
                 { icon: Clock, title: "Office Hours", info: "Mon–Sat: 8:00 AM – 3:00 PM" },
               ].map((c, i) => (
                 <AnimatedSection key={c.title} delay={i * 0.1}>
